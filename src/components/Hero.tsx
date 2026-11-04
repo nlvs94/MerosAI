@@ -66,8 +66,9 @@ export default function Hero() {
           <div className="absolute inset-0 overflow-hidden rounded-card">
             <ImageWithFallback
               src="/images/registan-bg.jpg"
-              alt="Registon maydoni tungi manzara"
+              alt="Meros AI robot assistenti Registon maydoni fonida"
               name="registan-bg.jpg"
+              loading="eager"
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-bg-deep via-bg-deep/40 to-transparent lg:from-bg-deep lg:via-bg-deep/10" />
@@ -80,16 +81,8 @@ export default function Hero() {
             <div className="absolute right-0 top-0 animate-float sm:right-4" style={{ animationDelay: '1.2s' }}>
               <SpeechBubble />
             </div>
-            <div className="flex justify-center pt-28">
-              <div className="h-[360px] w-[260px] animate-float sm:h-[440px] sm:w-[320px] lg:h-[560px] lg:w-[420px]">
-                <ImageWithFallback
-                  src="/images/robot.png"
-                  alt="Meros AI robot assistenti milliy liboslarda"
-                  name="robot.png"
-                  loading="eager"
-                  className="h-full w-full object-contain"
-                />
-              </div>
+            <div className="pt-28" aria-hidden="true">
+              <div className="h-[360px] sm:h-[440px] lg:h-[560px]" />
             </div>
           </div>
         </div>

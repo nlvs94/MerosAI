@@ -38,17 +38,20 @@ Natija `dist/` papkasida hosil bo'ladi. Oldindan ko'rish uchun:
 npm run preview
 ```
 
-## Rasmlarni qayerga qo'yish
+## Rasmlar
 
-Quyidagi fayllarni `public/images/` papkasiga joylashtiring:
+`public/images/` papkasida quyidagi rasmlar bor — ular `design/reference.png`
+dan to'g'ridan-to'g'ri kesib olingan (baked matnli HUD elementlar xiralashtirib
+tozalangan, "Meros AI" nutq pufakchasi esa kodda alohida chizilgan):
 
-- `robot.png` — hero bo'limidagi AI robot tasviri
-- `registan-bg.jpg` — hero bo'limining fon rasmi (Registon)
+- `registan-bg.jpg` — hero bo'limidagi robot + Registon fon tasviri
 - `servers.png` — "Local xizmatlar" kartasidagi tasvir
 - `cloud.png` — "Online xizmatlar" kartasidagi tasvir
 
-Agar rasm topilmasa, sahifa xato bermaydi — o'rniga avtomatik ravishda
-ko'k-binafsha gradientli `PlaceholderImage` komponenti ko'rsatiladi.
+Boshqa rasm bilan almashtirmoqchi bo'lsangiz, shu fayl nomlarini saqlab,
+`public/images/` ichidagi faylni almashtiring. Agar rasm topilmasa, sahifa
+xato bermaydi — o'rniga avtomatik ravishda ko'k-binafsha gradientli
+`PlaceholderImage` komponenti ko'rsatiladi.
 
 ## Papka tuzilishi
 
@@ -58,6 +61,6 @@ src/
                 ChartPanel, SpeechBubble, PlaceholderImage, ImageWithFallback
   data/         content.ts — barcha matnlar, menyu bandlari, kartalar
   App.tsx, main.tsx, index.css
-public/images/  robot.png, registan-bg.jpg, servers.png, cloud.png
+public/images/  registan-bg.jpg, servers.png, cloud.png
 design/         reference.png — asl dizayn namunasi
 ```
