@@ -40,11 +40,13 @@ npm run preview
 
 ## Rasmlar
 
-`public/images/` papkasida quyidagi rasmlar bor — ular `design/reference.png`
-dan to'g'ridan-to'g'ri kesib olingan (baked matnli HUD elementlar xiralashtirib
-tozalangan, "Meros AI" nutq pufakchasi esa kodda alohida chizilgan):
+`public/images/` papkasida quyidagi rasmlar bor:
 
-- `registan-bg.jpg` — hero bo'limidagi robot + Registon fon tasviri
+- `registan-bg.jpg` — hero bo'limining to'liq orqa foni (robot + Registon).
+  ≥768px ekranlarda butun hero bo'limi uchun bitta uzluksiz fon sifatida
+  ishlatiladi (rasmning chap tomoni tabiiy ravishda to'q rangga o'tadi va
+  saytning fon rangi bilan mos keladi); <768px'da esa alohida dumaloq
+  burchakli karta ichida ko'rsatiladi.
 - `servers.png` — "Local xizmatlar" kartasidagi tasvir
 - `cloud.png` — "Online xizmatlar" kartasidagi tasvir
 

@@ -35,6 +35,17 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden">
+      <div className="absolute inset-0 hidden md:block" aria-hidden="true">
+        <div className="absolute inset-0 animate-pulse-glow bg-[radial-gradient(ellipse_at_72%_22%,rgba(77,163,255,0.25),transparent_55%)]" />
+        <ImageWithFallback
+          src="/images/registan-bg.jpg"
+          alt=""
+          name="registan-bg.jpg"
+          loading="eager"
+          className="h-full w-full animate-breathe object-cover [object-position:72%_22%]"
+        />
+      </div>
+
       <div className="mx-auto flex max-w-container flex-col items-center gap-10 px-6 py-14 md:flex-row md:items-stretch md:gap-8 lg:px-14 lg:py-20">
         <div className="z-10 flex w-full flex-col justify-center md:w-[45%]">
           <Reveal>
@@ -91,23 +102,21 @@ export default function Hero() {
         </div>
 
         <div className="relative flex w-full items-end justify-center md:w-[55%]">
-          <div className="absolute inset-0 overflow-hidden rounded-card">
-            <div className="absolute inset-0 animate-pulse-glow bg-[radial-gradient(ellipse_at_35%_25%,rgba(77,163,255,0.35),transparent_60%)]" />
+          <div className="absolute inset-0 overflow-hidden rounded-card md:hidden">
             <ImageWithFallback
               src="/images/registan-bg.jpg"
               alt="Meros AI robot assistenti Registon maydoni fonida"
               name="registan-bg.jpg"
               loading="eager"
-              className="h-full w-full animate-breathe object-cover [object-position:33%_18%]"
+              className="h-full w-full object-cover [object-position:68%_20%]"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-bg-deep via-bg-deep/40 to-transparent lg:from-bg-deep lg:via-bg-deep/10" />
           </div>
 
           <div className="relative z-10 w-full">
-            <div className="absolute left-0 top-6 animate-float sm:left-4">
+            <div className="absolute left-0 top-32 animate-float sm:left-4 sm:top-6">
               <ChartPanel />
             </div>
-            <div className="absolute right-0 top-0 animate-float sm:right-4" style={{ animationDelay: '1.2s' }}>
+            <div className="absolute right-0 top-40 animate-float sm:right-4 sm:top-0" style={{ animationDelay: '1.2s' }}>
               <SpeechBubble />
             </div>
             <div className="pt-28" aria-hidden="true">
