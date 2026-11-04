@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { ArrowRight, Play, Rocket } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
-import ChartPanel from './ChartPanel'
 import SpeechBubble from './SpeechBubble'
 import ImageWithFallback from './ImageWithFallback'
 import Modal from './Modal'
@@ -36,13 +35,13 @@ export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
       <div className="absolute inset-0 hidden md:block" aria-hidden="true">
-        <div className="absolute inset-0 animate-pulse-glow bg-[radial-gradient(ellipse_at_72%_22%,rgba(77,163,255,0.25),transparent_55%)]" />
+        <div className="absolute inset-0 animate-pulse-glow bg-[radial-gradient(ellipse_at_52%_35%,rgba(77,163,255,0.25),transparent_55%)]" />
         <ImageWithFallback
           src="/images/registan-bg.jpg"
           alt=""
           name="registan-bg.jpg"
           loading="eager"
-          className="h-full w-full animate-breathe object-cover [object-position:72%_22%]"
+          className="h-full w-full animate-breathe object-cover [object-position:30%_20%]"
         />
       </div>
 
@@ -105,18 +104,15 @@ export default function Hero() {
           <div className="absolute inset-0 overflow-hidden rounded-card md:hidden">
             <ImageWithFallback
               src="/images/registan-bg.jpg"
-              alt="Meros AI robot assistenti Registon maydoni fonida"
+              alt="Meros AI robot assistenti qo'lida grafik ko'rsatkich bilan, Registon maydoni fonida"
               name="registan-bg.jpg"
               loading="eager"
-              className="h-full w-full object-cover [object-position:68%_20%]"
+              className="h-full w-full object-cover [object-position:53%_10%]"
             />
           </div>
 
           <div className="relative z-10 w-full">
-            <div className="absolute left-0 top-32 animate-float sm:left-4 sm:top-6">
-              <ChartPanel />
-            </div>
-            <div className="absolute right-0 top-40 animate-float sm:right-4 sm:top-0" style={{ animationDelay: '1.2s' }}>
+            <div className="absolute right-0 top-8 animate-float sm:right-4" style={{ animationDelay: '1.2s' }}>
               <SpeechBubble />
             </div>
             <div className="pt-28" aria-hidden="true">
