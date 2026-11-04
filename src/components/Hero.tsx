@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { ArrowRight, Play, Rocket } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 import { trackEvent } from '../lib/track'
-import ChartPanel from './ChartPanel'
 import SpeechBubble from './SpeechBubble'
 import ImageWithFallback from './ImageWithFallback'
 import Modal from './Modal'
@@ -118,9 +117,6 @@ export default function Hero() {
           </div>
 
           <div className="relative z-10 w-full">
-            <div className="absolute left-0 top-6 animate-float sm:left-4">
-              <ChartPanel />
-            </div>
             <div className="absolute right-0 top-40 animate-float sm:right-4 sm:top-0" style={{ animationDelay: '1.2s' }}>
               <SpeechBubble />
             </div>
