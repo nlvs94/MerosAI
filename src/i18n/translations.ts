@@ -53,6 +53,21 @@ export type Translation = {
     kirish: { title: string; body: string; close: string }
     video: { title: string; missing: string; close: string }
   }
+  contact: {
+    title: string
+    subtitle: string
+    firstName: string
+    lastName: string
+    phone: string
+    telegram: string
+    note: string
+    notePlaceholder: string
+    submit: string
+    sending: string
+    success: string
+    error: string
+    requiredError: string
+  }
   footer: string
 }
 
@@ -80,7 +95,7 @@ const uz: Translation = {
       },
       {
         label: 'AI Agentlar',
-        href: '#agentlar',
+        href: '#xizmatlar',
         dropdown: [
           { label: 'Chatbot agentlar' },
           { label: 'Avtomatlashtirish agentlari' },
@@ -89,15 +104,15 @@ const uz: Translation = {
       },
       {
         label: 'Mahsulotlar',
-        href: '#mahsulotlar',
+        href: '#xizmatlar',
         dropdown: [
           { label: 'Meros Chat' },
           { label: 'Meros Vision' },
           { label: 'Meros Cloud' },
         ],
       },
-      { label: 'Biz haqimizda', href: '#about' },
-      { label: 'Yangiliklar', href: '#news' },
+      { label: 'Biz haqimizda', href: '#contact' },
+      { label: 'Yangiliklar', href: '#contact' },
       { label: 'Bog‘lanish', href: '#contact' },
     ],
   },
@@ -167,6 +182,22 @@ const uz: Translation = {
       close: 'Yopish',
     },
   },
+  contact: {
+    title: 'Buyurtma qoldiring',
+    subtitle:
+      'Ismingiz va telefon raqamingizni qoldiring — mutaxassislarimiz tez orada siz bilan bog‘lanadi.',
+    firstName: 'Ismingiz',
+    lastName: 'Familiyangiz',
+    phone: 'Telefon raqamingiz',
+    telegram: 'Telegram foydalanuvchi nomi',
+    note: 'Izoh',
+    notePlaceholder: 'Qaysi xizmat qiziqtiradi? (ixtiyoriy)',
+    submit: 'Yuborish',
+    sending: 'Yuborilmoqda...',
+    success: 'Rahmat! So‘rovingiz qabul qilindi, tez orada siz bilan bog‘lanamiz.',
+    error: 'Xatolik yuz berdi. Birozdan so‘ng qayta urinib ko‘ring.',
+    requiredError: 'Ism va telefon raqamini kiriting.',
+  },
   footer: 'Meros AI. Barcha huquqlar himoyalangan.',
 }
 
@@ -192,7 +223,7 @@ const ru: Translation = {
       },
       {
         label: 'ИИ-агенты',
-        href: '#agentlar',
+        href: '#xizmatlar',
         dropdown: [
           { label: 'Чат-боты' },
           { label: 'Агенты автоматизации' },
@@ -201,15 +232,15 @@ const ru: Translation = {
       },
       {
         label: 'Продукты',
-        href: '#mahsulotlar',
+        href: '#xizmatlar',
         dropdown: [
           { label: 'Meros Chat' },
           { label: 'Meros Vision' },
           { label: 'Meros Cloud' },
         ],
       },
-      { label: 'О нас', href: '#about' },
-      { label: 'Новости', href: '#news' },
+      { label: 'О нас', href: '#contact' },
+      { label: 'Новости', href: '#contact' },
       { label: 'Контакты', href: '#contact' },
     ],
   },
@@ -279,6 +310,22 @@ const ru: Translation = {
       close: 'Закрыть',
     },
   },
+  contact: {
+    title: 'Оставьте заявку',
+    subtitle:
+      'Оставьте имя и номер телефона — наши специалисты свяжутся с вами в ближайшее время.',
+    firstName: 'Ваше имя',
+    lastName: 'Ваша фамилия',
+    phone: 'Номер телефона',
+    telegram: 'Telegram-username',
+    note: 'Комментарий',
+    notePlaceholder: 'Какая услуга вас интересует? (необязательно)',
+    submit: 'Отправить',
+    sending: 'Отправка...',
+    success: 'Спасибо! Ваша заявка принята, мы скоро свяжемся с вами.',
+    error: 'Произошла ошибка. Попробуйте ещё раз чуть позже.',
+    requiredError: 'Укажите имя и номер телефона.',
+  },
   footer: 'Meros AI. Все права защищены.',
 }
 
@@ -304,7 +351,7 @@ const en: Translation = {
       },
       {
         label: 'AI Agents',
-        href: '#agentlar',
+        href: '#xizmatlar',
         dropdown: [
           { label: 'Chatbot Agents' },
           { label: 'Automation Agents' },
@@ -313,15 +360,15 @@ const en: Translation = {
       },
       {
         label: 'Products',
-        href: '#mahsulotlar',
+        href: '#xizmatlar',
         dropdown: [
           { label: 'Meros Chat' },
           { label: 'Meros Vision' },
           { label: 'Meros Cloud' },
         ],
       },
-      { label: 'About Us', href: '#about' },
-      { label: 'News', href: '#news' },
+      { label: 'About Us', href: '#contact' },
+      { label: 'News', href: '#contact' },
       { label: 'Contact', href: '#contact' },
     ],
   },
@@ -390,6 +437,21 @@ const en: Translation = {
       missing: "Video hasn't been added yet. Place it at public/videos/intro.mp4.",
       close: 'Close',
     },
+  },
+  contact: {
+    title: 'Leave a request',
+    subtitle: 'Leave your name and phone number — our team will contact you shortly.',
+    firstName: 'First name',
+    lastName: 'Last name',
+    phone: 'Phone number',
+    telegram: 'Telegram username',
+    note: 'Note',
+    notePlaceholder: 'Which service interests you? (optional)',
+    submit: 'Send',
+    sending: 'Sending...',
+    success: "Thank you! Your request has been received — we'll contact you soon.",
+    error: 'Something went wrong. Please try again shortly.',
+    requiredError: 'Please enter your name and phone number.',
   },
   footer: 'Meros AI. All rights reserved.',
 }

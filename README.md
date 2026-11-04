@@ -81,16 +81,56 @@ ovozli yordamchi yoki video imkoniyatlarini qo'shish uchun avval kichik
 backend/serverless proksi qo'shilishi kerak — bu alohida bosqich sifatida
 rejalashtirilgan.
 
+## Buyurtma formasi va Admin panel
+
+Sahifa pastida (`#contact`) haqiqiy buyurtma formasi bor: Ism, Familiya,
+Telefon, Telegram, Izoh. Forma to'ldirilib yuborilganda, ma'lumot **Upstash
+Redis** bazasiga saqlanadi (Vercel orqali ulanadi). Shuningdek, "Boshlash",
+"Video ko'rish", "Kirish" va "Batafsil" tugmalari bosilganda ham (ismsiz)
+statistika sifatida saqlanadi — kim nima bilan qiziqqanini ko'rish uchun.
+
+Barcha buyurtma va statistikani ko'rish uchun: **`/admin.html`** sahifasiga
+kiring (masalan `https://sizning-saytingiz.vercel.app/admin.html`) va parolni
+kiriting.
+
+### Vercel'da bir martalik sozlash (MAJBURIY)
+
+Forma va admin panel ishlashi uchun Vercel loyihangizda 2 narsa sozlanishi
+kerak:
+
+1. **Redis bazasi ulash:**
+   Vercel loyiha sahifasida → **Storage** bo'limi → **Create Database** →
+   **Redis** (Upstash orqali, bepul tarif yetarli) → yarating va loyihaga
+   **Connect** qiling. Bu avtomatik ravishda kerakli environment
+   o'zgaruvchilarni (`KV_REST_API_URL`, `KV_REST_API_TOKEN` yoki
+   `UPSTASH_REDIS_REST_URL`/`TOKEN`) qo'shib qo'yadi.
+
+2. **Admin parolini o'rnatish:**
+   Vercel loyiha sahifasida → **Settings → Environment Variables** →
+   yangi o'zgaruvchi qo'shing:
+   - **Name:** `ADMIN_PASSWORD`
+   - **Value:** (o'zingiz xohlagan kuchli parol)
+
+Ikkalasini sozlab, loyihani **qayta deploy qiling** (Redeploy). Shundan
+keyin forma va `/admin.html` to'liq ishlaydi. Sozlanmagan bo'lsa, forma
+aniq xato xabarini ko'rsatadi (masalan "Ma'lumotlar bazasi ulanmagan").
+
 ## Papka tuzilishi
 
 ```
 src/
   components/   Navbar, Hero, ServiceCards, FeatureCards, StatsBar, Logo,
-                ChartPanel, SpeechBubble, PlaceholderImage, ImageWithFallback,
-                Modal, Flags (UZ/RU/GB bayroqlari)
+                SpeechBubble, PlaceholderImage, ImageWithFallback,
+                Modal, Flags (UZ/RU/GB bayroqlari), ContactSection
   i18n/         translations.ts (UZ/RU/EN matnlari), LanguageContext.tsx
+  lib/          track.ts — tugma bosilishlarini kuzatish
   App.tsx, main.tsx, index.css
-public/images/  registan-bg.jpg, servers.png, cloud.png
-public/videos/  intro.mp4 (ixtiyoriy — "Video ko'rish" tugmasi uchun)
-design/         reference.png — asl dizayn namunasi
+  AdminApp.tsx, admin-main.tsx — /admin.html uchun alohida ilova
+api/
+  submit.ts       — forma va statistika yuborish (POST, public)
+  admin-data.ts   — admin panel uchun ma'lumot olish (GET, parol bilan himoyalangan)
+admin.html        — admin panelning HTML kirish nuqtasi
+public/images/    registan-bg.jpg, servers.png, cloud.png, flag-uz.webp
+public/videos/    intro.mp4 (ixtiyoriy — "Video ko'rish" tugmasi uchun)
+design/           reference.png — asl dizayn namunasi
 ```

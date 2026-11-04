@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ArrowRight, Play, Rocket } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
+import { trackEvent } from '../lib/track'
 import SpeechBubble from './SpeechBubble'
 import ImageWithFallback from './ImageWithFallback'
 import Modal from './Modal'
@@ -29,7 +30,7 @@ function VideoPlayer({ missingText }: { missingText: string }) {
 }
 
 export default function Hero() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const [videoOpen, setVideoOpen] = useState(false)
 
   return (
@@ -79,7 +80,8 @@ export default function Hero() {
           <Reveal delay={300}>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
-                href="#xizmatlar"
+                href="#contact"
+                onClick={() => trackEvent('Boshlash', lang)}
                 className="flex items-center gap-2 rounded-pill bg-gradient-to-r from-brand-blue to-brand-blue-bright px-7 py-3.5 text-sm font-semibold text-white shadow-btn-glow transition hover:brightness-110"
               >
                 <Rocket size={18} aria-hidden="true" />
@@ -88,7 +90,10 @@ export default function Hero() {
               </a>
               <button
                 type="button"
-                onClick={() => setVideoOpen(true)}
+                onClick={() => {
+                  trackEvent('Video ko‘rish', lang)
+                  setVideoOpen(true)
+                }}
                 className="flex items-center gap-3 rounded-pill border border-white/20 px-6 py-3.5 text-sm font-semibold text-ink-primary transition hover:border-brand-blue/60"
               >
                 <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/40">

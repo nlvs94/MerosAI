@@ -5,6 +5,7 @@ import Modal from './Modal'
 import { flagByLang } from './Flags'
 import { useLanguage } from '../i18n/LanguageContext'
 import { languages, type Lang } from '../i18n/translations'
+import { trackEvent } from '../lib/track'
 
 export default function Navbar() {
   const { lang, setLang, t } = useLanguage()
@@ -105,7 +106,10 @@ export default function Navbar() {
           </div>
           <button
             type="button"
-            onClick={() => setKirishOpen(true)}
+            onClick={() => {
+              trackEvent('Kirish', lang)
+              setKirishOpen(true)
+            }}
             className="flex items-center gap-2 rounded-pill border border-brand-blue/50 px-5 py-2.5 text-sm font-semibold text-ink-primary shadow-btn-glow transition hover:bg-brand-blue/10"
           >
             <LogIn size={16} aria-hidden="true" />
@@ -160,7 +164,10 @@ export default function Navbar() {
             </div>
             <button
               type="button"
-              onClick={() => setKirishOpen(true)}
+              onClick={() => {
+                trackEvent('Kirish', lang)
+                setKirishOpen(true)
+              }}
               className="flex items-center gap-2 rounded-pill border border-brand-blue/50 px-5 py-2.5 text-sm font-semibold"
             >
               <LogIn size={16} aria-hidden="true" />

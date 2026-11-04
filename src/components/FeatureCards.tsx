@@ -1,10 +1,11 @@
 import { ArrowRight, Check } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
+import { trackEvent } from '../lib/track'
 import ImageWithFallback from './ImageWithFallback'
 import Reveal from './Reveal'
 
 export default function FeatureCards() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
 
   return (
     <section aria-label="Local va online xizmatlar" className="mx-auto max-w-container px-6 py-16 lg:px-14">
@@ -49,7 +50,8 @@ export default function FeatureCards() {
                   className="h-36 w-full rounded-xl object-cover"
                 />
                 <a
-                  href="#batafsil"
+                  href="#contact"
+                  onClick={() => trackEvent(`Batafsil: ${card.title}`, lang)}
                   className={`flex items-center gap-2 self-end rounded-pill px-5 py-2.5 text-sm font-semibold text-white shadow-btn-glow transition hover:brightness-110 ${
                     card.ctaColor === 'blue'
                       ? 'bg-gradient-to-r from-brand-blue to-brand-blue-bright'
