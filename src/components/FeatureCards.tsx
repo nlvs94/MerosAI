@@ -1,13 +1,15 @@
 import { ArrowRight, Check } from 'lucide-react'
-import { featureCards } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 import ImageWithFallback from './ImageWithFallback'
 import Reveal from './Reveal'
 
 export default function FeatureCards() {
+  const { t } = useLanguage()
+
   return (
     <section aria-label="Local va online xizmatlar" className="mx-auto max-w-container px-6 py-16 lg:px-14">
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {featureCards.map((card, i) => (
+        {t.featureCards.map((card, i) => (
           <Reveal key={card.title} delay={i * 120}>
             <div className="glass-card flex h-full flex-col justify-between gap-6 p-7 sm:flex-row sm:items-center">
               <div className="flex-1">
@@ -44,7 +46,7 @@ export default function FeatureCards() {
                   src={card.image}
                   alt={card.imageAlt}
                   name={card.image.split('/').pop() ?? 'image'}
-                  className="h-36 w-full rounded-xl object-contain"
+                  className="h-36 w-full rounded-xl object-cover"
                 />
                 <a
                   href="#batafsil"
@@ -54,7 +56,7 @@ export default function FeatureCards() {
                       : 'bg-gradient-to-r from-brand-violet to-purple-400'
                   }`}
                 >
-                  Batafsil
+                  {card.cta}
                   <ArrowRight size={16} aria-hidden="true" />
                 </a>
               </div>

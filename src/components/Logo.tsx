@@ -1,8 +1,11 @@
+import { useLanguage } from '../i18n/LanguageContext'
+
 type LogoProps = {
   className?: string
 }
 
 export default function Logo({ className = '' }: LogoProps) {
+  const { t } = useLanguage()
   return (
     <div className={`flex min-w-0 items-center gap-3 ${className}`}>
       <svg width="48" height="48" viewBox="0 0 40 40" fill="none" aria-hidden="true" className="shrink-0">
@@ -20,9 +23,7 @@ export default function Logo({ className = '' }: LogoProps) {
       </svg>
       <div className="min-w-0 leading-tight">
         <p className="truncate text-xl font-extrabold tracking-tight text-ink-primary">Meros AI</p>
-        <p className="hidden truncate text-xs text-ink-secondary sm:block">
-          Intellekt. Biznes. Rivojlanish.
-        </p>
+        <p className="hidden truncate text-xs text-ink-secondary sm:block">{t.brand.tagline}</p>
       </div>
     </div>
   )

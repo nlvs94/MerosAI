@@ -48,11 +48,21 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(24px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        breathe: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.025)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { opacity: '0.5' },
+          '50%': { opacity: '1' },
+        },
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
         'pulse-wave': 'pulse-wave 1s ease-in-out infinite',
         'fade-up': 'fade-up 0.8s ease-out forwards',
+        breathe: 'breathe 7s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
       },
     },
   },

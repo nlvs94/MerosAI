@@ -1,5 +1,6 @@
 import { Rocket, ShieldCheck, Users, Zap, type LucideIcon } from 'lucide-react'
-import { stats, statsTagline, type StatItem } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
+import type { StatItem } from '../i18n/translations'
 import Reveal from './Reveal'
 
 const iconMap: Record<StatItem['icon'], LucideIcon> = {
@@ -10,12 +11,14 @@ const iconMap: Record<StatItem['icon'], LucideIcon> = {
 }
 
 export default function StatsBar() {
+  const { t } = useLanguage()
+
   return (
     <section aria-label="Statistika" className="mx-auto max-w-container px-6 pb-16 lg:px-14">
       <Reveal>
         <div className="glass-card flex flex-col items-center gap-8 p-8 lg:flex-row lg:justify-between">
           <div className="grid w-full grid-cols-2 gap-6 lg:w-auto lg:flex lg:items-center lg:gap-10">
-            {stats.map((stat) => {
+            {t.stats.map((stat) => {
               const Icon = iconMap[stat.icon]
               return (
                 <div key={stat.label} className="flex items-center gap-3">
@@ -34,7 +37,7 @@ export default function StatsBar() {
           <div className="hidden h-14 w-px bg-white/10 lg:block" aria-hidden="true" />
 
           <p className="max-w-xs text-center text-sm font-medium text-ink-primary lg:text-left">
-            {statsTagline}
+            {t.statsTagline}
           </p>
 
           <div className="flex flex-col items-center">

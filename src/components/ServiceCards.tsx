@@ -1,5 +1,6 @@
-import { Bot, Cloud, Cpu, Monitor, TrendingUp, type LucideIcon } from 'lucide-react'
-import { serviceCards, type ServiceCard } from '../data/content'
+import { Bot, Cloud, Cpu, Monitor, PhoneCall, TrendingUp, type LucideIcon } from 'lucide-react'
+import { useLanguage } from '../i18n/LanguageContext'
+import type { ServiceCard } from '../i18n/translations'
 import Reveal from './Reveal'
 
 const iconMap: Record<ServiceCard['icon'], LucideIcon> = {
@@ -8,13 +9,16 @@ const iconMap: Record<ServiceCard['icon'], LucideIcon> = {
   monitor: Monitor,
   cloud: Cloud,
   trending: TrendingUp,
+  phone: PhoneCall,
 }
 
 export default function ServiceCards() {
+  const { t } = useLanguage()
+
   return (
     <section id="xizmatlar" aria-label="Xizmatlar" className="mx-auto max-w-container px-6 lg:px-14">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-        {serviceCards.map((card, i) => {
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+        {t.serviceCards.map((card, i) => {
           const Icon = iconMap[card.icon]
           return (
             <Reveal key={card.title} delay={i * 80}>

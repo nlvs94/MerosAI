@@ -1,12 +1,13 @@
-import { speechBubble } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function SpeechBubble() {
+  const { t } = useLanguage()
   return (
     <div className="relative">
       <div className="glass-card w-[280px] rounded-2xl px-5 py-4 sm:w-[300px]">
-        <p className="text-base font-bold text-ink-primary">{speechBubble.greeting}</p>
-        <p className="text-sm text-ink-secondary">{speechBubble.lineOne}</p>
-        <p className="text-sm text-ink-secondary">{speechBubble.lineTwo}</p>
+        <p className="text-base font-bold text-ink-primary">{t.speechBubble.greeting}</p>
+        <p className="text-sm text-ink-secondary">{t.speechBubble.lineOne}</p>
+        <p className="text-sm text-ink-secondary">{t.speechBubble.lineTwo}</p>
         <div className="mt-3 flex h-5 items-end gap-[3px]" aria-hidden="true">
           {[6, 12, 18, 10, 16, 8, 14, 6].map((h, i) => (
             <span
