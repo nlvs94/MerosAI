@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { getRedis } from '../lib/redis'
+import { getRedis } from '../lib/redis.js'
 
 function parseEntries(raw: unknown[]): Record<string, unknown>[] {
   return raw
