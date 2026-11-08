@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 import { randomUUID } from 'node:crypto'
-import { getRedis } from './_redis'
+import { getRedis } from '../lib/redis'
 
 function clip(value: unknown, max: number): string {
   return String(value ?? '').slice(0, max)

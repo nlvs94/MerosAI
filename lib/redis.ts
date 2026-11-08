@@ -1,4 +1,4 @@
-import { createClient } from 'redis'
+import { createClient } from '@redis/client'
 
 let client: ReturnType<typeof createClient> | null = null
 let connecting: Promise<void> | null = null
