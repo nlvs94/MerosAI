@@ -4,6 +4,7 @@ import ServiceCards from './components/ServiceCards'
 import FeatureCards from './components/FeatureCards'
 import StatsBar from './components/StatsBar'
 import ContactSection from './components/ContactSection'
+import ChatWidget from './components/ChatWidget'
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext'
 
 function AppContent() {
@@ -22,6 +23,7 @@ function AppContent() {
       <footer className="border-t border-white/5 px-6 py-6 text-center text-xs text-ink-secondary lg:px-14">
         © {new Date().getFullYear()} {t.footer}
       </footer>
+      <ChatWidget />
     </div>
   )
 }

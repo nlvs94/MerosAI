@@ -69,6 +69,16 @@ export type Translation = {
     requiredError: string
   }
   footer: string
+  chat: {
+    openLabel: string
+    title: string
+    subtitle: string
+    placeholder: string
+    send: string
+    greeting: string
+    thinking: string
+    error: string
+  }
 }
 
 export const languages: Lang[] = ['UZ', 'RU', 'EN']
@@ -199,6 +209,16 @@ const uz: Translation = {
     requiredError: 'Ism va telefon raqamini kiriting.',
   },
   footer: 'Meros AI. Barcha huquqlar himoyalangan.',
+  chat: {
+    openLabel: 'Meros AI bilan suhbat',
+    title: 'Meros AI',
+    subtitle: 'Savolingiz bormi? Yozing!',
+    placeholder: 'Xabar yozing...',
+    send: 'Yuborish',
+    greeting: 'Salom! Men Meros AI yordamchisiman. Xizmatlarimiz haqida savolingiz bormi?',
+    thinking: 'Yozmoqda...',
+    error: 'Xatolik yuz berdi. Birozdan so‘ng qayta urinib ko‘ring.',
+  },
 }
 
 const ru: Translation = {
@@ -327,6 +347,16 @@ const ru: Translation = {
     requiredError: 'Укажите имя и номер телефона.',
   },
   footer: 'Meros AI. Все права защищены.',
+  chat: {
+    openLabel: 'Чат с Meros AI',
+    title: 'Meros AI',
+    subtitle: 'Есть вопрос? Напишите!',
+    placeholder: 'Напишите сообщение...',
+    send: 'Отправить',
+    greeting: 'Привет! Я помощник Meros AI. Есть вопросы о наших услугах?',
+    thinking: 'Печатает...',
+    error: 'Произошла ошибка. Попробуйте ещё раз чуть позже.',
+  },
 }
 
 const en: Translation = {
@@ -454,6 +484,16 @@ const en: Translation = {
     requiredError: 'Please enter your name and phone number.',
   },
   footer: 'Meros AI. All rights reserved.',
+  chat: {
+    openLabel: 'Chat with Meros AI',
+    title: 'Meros AI',
+    subtitle: 'Have a question? Ask away!',
+    placeholder: 'Type a message...',
+    send: 'Send',
+    greeting: "Hi! I'm the Meros AI assistant. Any questions about our services?",
+    thinking: 'Typing...',
+    error: 'Something went wrong. Please try again shortly.',
+  },
 }
 
 export const translations: Record<Lang, Translation> = { UZ: uz, RU: ru, EN: en }
