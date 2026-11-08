@@ -84,8 +84,8 @@ rejalashtirilgan.
 ## Buyurtma formasi va Admin panel
 
 Sahifa pastida (`#contact`) haqiqiy buyurtma formasi bor: Ism, Familiya,
-Telefon, Telegram, Izoh. Forma to'ldirilib yuborilganda, ma'lumot **Upstash
-Redis** bazasiga saqlanadi (Vercel orqali ulanadi). Shuningdek, "Boshlash",
+Telefon, Telegram, Izoh. Forma to'ldirilib yuborilganda, ma'lumot **Redis**
+bazasiga saqlanadi (Vercel Storage orqali ulanadi). Shuningdek, "Boshlash",
 "Video ko'rish", "Kirish" va "Batafsil" tugmalari bosilganda ham (ismsiz)
 statistika sifatida saqlanadi — kim nima bilan qiziqqanini ko'rish uchun.
 
@@ -100,10 +100,9 @@ kerak:
 
 1. **Redis bazasi ulash:**
    Vercel loyiha sahifasida → **Storage** bo'limi → **Create Database** →
-   **Redis** (Upstash orqali, bepul tarif yetarli) → yarating va loyihaga
-   **Connect** qiling. Bu avtomatik ravishda kerakli environment
-   o'zgaruvchilarni (`KV_REST_API_URL`, `KV_REST_API_TOKEN` yoki
-   `UPSTASH_REDIS_REST_URL`/`TOKEN`) qo'shib qo'yadi.
+   **Redis** (bepul tarif yetarli) → yarating va loyihaga **Connect**
+   qiling. Bu avtomatik ravishda `REDIS_URL` environment o'zgaruvchisini
+   qo'shib qo'yadi — kod shu nom bilan ulanadi.
 
 2. **Admin parolini o'rnatish:**
    Vercel loyiha sahifasida → **Settings → Environment Variables** →
